@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'page/demo/page.dart';
 import 'package:device_info/device_info.dart';
 
+import 'page/demo/route.dart';
+
 void getDeviceInfo() async {
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
   AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
@@ -22,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState () {
     super.initState();
-    getDeviceInfo();
+//    getDeviceInfo();
   }
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class _MyAppState extends State<MyApp> {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: DemoPage().buildPage(null),
+      home: routes.buildPage("demo", null),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:fish_redux/fish_redux.dart';
+
 import '../utils/HttpUtils.dart';
 import '../apiModel/user.dart';
 
@@ -10,12 +12,12 @@ class UserApi {
   static Future<List<User>> getUser() async {
 
     var result = await HttpUtils.request(
-      '/user',
+      '/user/list',
       method: HttpUtils.GET,
     );
 
     var usersJson = json.decode(result);
-    List<User> userList = (usersJson as List).map((i)=>User.fromJson(i)).toList();
+    List<User> userList = (usersJson['data'] as List).map((i)=>User.fromJson(i)).toList();
     return userList;
   }
 

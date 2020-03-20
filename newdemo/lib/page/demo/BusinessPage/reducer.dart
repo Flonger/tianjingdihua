@@ -14,6 +14,6 @@ Reducer<BusinessState> buildReducer() {
 BusinessState _onQuery(BusinessState state, Action action) {
   print('我是值真正更新的地方');
   final BusinessState newState = state.clone();
-  newState.userList = action.payload;
+  newState.storeList = action.payload;
   return newState;
 }

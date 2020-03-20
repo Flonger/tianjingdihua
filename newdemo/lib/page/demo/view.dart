@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
+import 'package:newdemo/page/demo/FriendPage/page.dart';
 
 import 'BusinessPage/page.dart';
 import 'HomePage/page.dart';
@@ -20,6 +21,7 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
   List<Widget> _widgetOptions = <Widget>[
     homepagePage().buildPage(null),
     BusinessPage().buildPage(null),
+    FriendPagePage().buildPage(null),
     VideoPagePage().buildPage(null),
     MinePagePage().buildPage(null),
 
@@ -27,7 +29,7 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
 
   return Scaffold(
       appBar: AppBar(
-        title: const Text('宠物乐园'),
+        title: Text(state.naviName),
         backgroundColor: Colors.black87,
       ),
       body: Center(
@@ -43,7 +45,7 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
               child: GNav(
                       gap: 8,
                       activeColor: Colors.white,
-                      iconSize: 24,
+                      iconSize: 20,
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                       duration: Duration(milliseconds: 400),
                       tabBackgroundColor: Colors.grey[800],
@@ -53,12 +55,16 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
                           text: '关于我们',
                           ),
                           GButton(
-                          icon: LineIcons.heart_o,
+                          icon: LineIcons.shopping_cart,
                           text: '爱宠用品',
                           ),
                           GButton(
+                          icon: LineIcons.heart_o,
+                          text: '爱宠交友',
+                          ),
+                          GButton(
                           icon: LineIcons.video_camera,
-                          text: '视频',
+                          text: '爱宠生活',
                           ),
                           GButton(
                           icon: LineIcons.user,

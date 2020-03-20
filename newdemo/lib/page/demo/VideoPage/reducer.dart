@@ -8,7 +8,6 @@ Reducer<VideoPageState> buildReducer() {
   return asReducer(
     <Object, Reducer<VideoPageState>>{
       VideoPageAction.action: _onAction,
-      VideoPageAction.action: _itemOnClick,
     },
   );
 }
@@ -16,12 +15,4 @@ Reducer<VideoPageState> buildReducer() {
 VideoPageState _onAction(VideoPageState state, Action action) {
   final VideoPageState newState = state.clone();
   return newState;
-}
-
-VideoPageState _itemOnClick(VideoPageState state, Action action){
-  println('点击跳转');
-  println(action.payload);
-//  Navigator.push(
-//      BuildContext context,
-//      MaterialPageRoute(builder: (context) => VideoDetailPage().buildPage(null)));
 }

@@ -1,17 +1,23 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:newdemo/api/homepage.dart';
 import 'action.dart';
 import 'state.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:io';
 Effect<homepageState> buildEffect() {
   return combineEffects(<Object, Effect<homepageState>>{
+    Lifecycle.initState: _init,
     homepageAction.action: _onAction,
     homepageAction.call: _onCall,
     homepageAction.route: _onRoute,
     homepageAction.share: _onShare,
   });
 }
-
+void _init(Action action, Context<homepageState> ctx) {
+  HomePageApi.getInfo().then((value){
+      ctx.dispatch(homepageActionCreator.getInfo(value));
+  });
+}
 void _onAction(Action action, Context<homepageState> ctx) {
 }
 void _onCall(Action action, Context<homepageState> ctx) {

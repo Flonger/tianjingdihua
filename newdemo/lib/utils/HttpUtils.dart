@@ -19,8 +19,8 @@ class HttpUtils {
   static Dio dio;
 
   /// default options
-  static const String API_PREFIX = 'http://101.132.124.171:8080/demo-1.0/api';
-  static const int CONNECT_TIMEOUT = 10000;
+  static const String API_PREFIX = 'https://www.fastmock.site/mock/fd73a003c441adca158c8098c2985e5d/api';
+  static const int CONNECT_TIMEOUT = 15000;
   static const int RECEIVE_TIMEOUT = 3000;
 
   /// http request methods

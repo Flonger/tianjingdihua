@@ -20,17 +20,7 @@ Widget buildView(VideoPageState state, Dispatch dispatch, ViewService viewServic
         7,
         8,
         9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
+        10
       ].map((i) {
         return GestureDetector(
           onTap: (){
@@ -39,10 +29,18 @@ Widget buildView(VideoPageState state, Dispatch dispatch, ViewService viewServic
           child: Container(
             height: 200,
             alignment: Alignment(0, 0),
-            color: Colors.cyan,
-            child: Text(i.toString()),
+            color: hexToColor('#FAE13E'),
+            child: Text('摄像头'+i.toString()),
           ),
         );
       }).toList()
   );
+}
+
+Color hexToColor(String s) {
+  // 如果传入的十六进制颜色值不符合要求，返回默认值
+  if (s == null || s.length != 7 || int.tryParse(s.substring(1, 7), radix: 16) == null) {
+    s = '#999999';
+  }
+  return new Color(int.parse(s.substring(1, 7), radix: 16) + 0xFF000000);
 }

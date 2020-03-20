@@ -1,11 +1,12 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:newdemo/apiModel/commodity.dart';
 import '../../../apiModel/user.dart';
 
 class BusinessState implements Cloneable<BusinessState> {
 
-  BusinessState({this.userList});
+  BusinessState({this.storeList});
 
-  List<User> userList = new List<User>();
+  List<Commodity> storeList = new List<Commodity>();
 
   @override
   BusinessState clone() {
@@ -14,15 +15,6 @@ class BusinessState implements Cloneable<BusinessState> {
 }
 
 BusinessState initState(Map<String, dynamic> args) {
-  List<User> tempList = new List<User>();
-  User user = new User();
-  user.no = 0;
-  user.name = '梁二狗';
-  user.email = '1@qq.com';
-  tempList.add(user);
-  tempList.add(user);
-  tempList.add(user);
-  tempList.add(user);
-  tempList.add(user);
-  return BusinessState(userList: tempList);
+  List<Commodity> tempList = new List<Commodity>();
+  return BusinessState(storeList: tempList);
 }
