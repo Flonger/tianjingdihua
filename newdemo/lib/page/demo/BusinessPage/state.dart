@@ -31,8 +31,6 @@ class BusinessState extends MutableSource implements Cloneable<BusinessState> {
 }
 
 BusinessState initState(Map<String, dynamic> args) {
-  List<Commodity> tempList = new List<Commodity>();
-  List<CommodityItemState> cItems = new List<CommodityItemState>();
-  return BusinessState(storeList: tempList,cItems: cItems);
+  return BusinessState();
 }
 

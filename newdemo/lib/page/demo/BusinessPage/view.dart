@@ -5,6 +5,7 @@ import 'action.dart';
 import 'state.dart';
 
 Widget buildView(BusinessState state, Dispatch dispatch, ViewService viewService) {
+  println(state.cItems!=null?state.cItems.length:0);
     return ListView.builder(
       itemBuilder: viewService.buildAdapter().itemBuilder,
       itemCount: viewService.buildAdapter().itemCount,

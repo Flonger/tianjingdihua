@@ -1,5 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
+import 'package:newdemo/apiModel/commodity.dart';
+import 'package:newdemo/page/demo/BusinessPage/action.dart';
 
 import 'action.dart';
 import 'state.dart';
@@ -7,7 +9,8 @@ import 'state.dart';
 Widget buildView(CommodityItemState state, Dispatch dispatch, ViewService viewService) {
   return GestureDetector(
     onTap: (){
-//      dispatch(BusinessActionCreator.itemOnClick(state.storeList[index]));
+      Commodity commodity = new Commodity(state.id, state.title, state.imgUrl, state.num, state.desc, state.price, state.unit);
+      dispatch(BusinessActionCreator.itemOnClick(commodity));
     },
     child: Card(
       child: Row(

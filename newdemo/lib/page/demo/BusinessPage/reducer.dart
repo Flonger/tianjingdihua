@@ -23,5 +23,6 @@ BusinessState _onQuery(BusinessState state, Action action) {
 BusinessState _onLoadSettings(BusinessState state, Action action) {
   final BusinessState newState = state.clone();
   newState.cItems = action.payload;
+  println('state更新了');
   return newState;
 }

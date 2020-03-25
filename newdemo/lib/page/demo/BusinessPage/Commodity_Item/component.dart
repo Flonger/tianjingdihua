@@ -6,6 +6,7 @@ import 'state.dart';
 import 'view.dart';
 
 class CommodityItemComponent extends Component<CommodityItemState> {
+
   CommodityItemComponent()
       : super(
             effect: buildEffect(),

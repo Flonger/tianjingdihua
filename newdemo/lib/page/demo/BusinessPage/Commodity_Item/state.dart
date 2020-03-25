@@ -7,7 +7,9 @@ class CommodityItemState implements Cloneable<CommodityItemState> {
   String desc;
   String price;
   String unit;
-  CommodityItemState({this.imgUrl, this.title, this.desc, this.price, this.unit});
+  int num;
+  String id;
+  CommodityItemState({this.imgUrl, this.title, this.desc, this.price, this.unit,this.id,this.num});
 
 
   @override
@@ -17,7 +19,9 @@ class CommodityItemState implements Cloneable<CommodityItemState> {
     ..title = title
     ..desc = desc
     ..price = price
-    ..unit = unit;
+    ..unit = unit
+    ..id = id
+    ..num = num;
   }
 }
 

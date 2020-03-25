@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'page/demo/page.dart';
-import 'package:device_info/device_info.dart';
+//import 'package:device_info/device_info.dart';
 
 import 'page/demo/route.dart';
 
 void getDeviceInfo() async {
-  DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-  AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-  print('Running on ${androidInfo.model}');  // e.g. "Moto G (4)"
-
-  IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
-  print('Running on ${iosInfo.utsname.machine}');
+//  DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+//  AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+//  print('Running on ${androidInfo.model}');  // e.g. "Moto G (4)"
+//
+//  IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
+//  print('Running on ${iosInfo.utsname.machine}');
 }
 void main() => runApp(MyApp());
 
