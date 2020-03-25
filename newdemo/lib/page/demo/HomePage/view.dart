@@ -11,12 +11,13 @@ Widget buildView(homepageState state, Dispatch dispatch, ViewService viewService
   YYDialog.init(viewService.context);
   return ListView(
     children: [
-      Image.network(
-        state.topImage,
-        width: 600,
-        height: 240,
-        fit: BoxFit.cover,
-      ),
+//      Image.network(
+//        state.topImage,
+//        width: 600,
+//        height: 240,
+//        fit: BoxFit.cover,
+//      ),
+      viewService.buildComponent('banner'),
       titleSection(state),
       buttonSection(state,dispatch),
       textSection(state),

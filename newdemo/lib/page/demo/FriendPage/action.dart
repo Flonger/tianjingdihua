@@ -5,6 +5,7 @@ import 'package:newdemo/apiModel/pet.dart';
 enum FriendPageAction {
   action,
   getList,
+  toDetail,
 }
 
 class FriendPageActionCreator {
@@ -13,5 +14,8 @@ class FriendPageActionCreator {
   }
   static Action getList(List <Pet> petList) {
     return Action(FriendPageAction.getList, payload: petList);
+  }
+  static Action toDetail(Pet pet) {
+    return Action(FriendPageAction.toDetail, payload: pet);
   }
 }

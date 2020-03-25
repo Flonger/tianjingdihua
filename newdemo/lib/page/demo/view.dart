@@ -46,25 +46,25 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
                       gap: 8,
                       activeColor: Colors.white,
                       iconSize: 20,
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                      duration: Duration(milliseconds: 400),
+                      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                      duration: Duration(milliseconds: 300),
                       tabBackgroundColor: Colors.grey[800],
                       tabs: [
                           GButton(
                           icon: LineIcons.home,
-                          text: '关于我们',
+                          text: '首页',
                           ),
                           GButton(
                           icon: LineIcons.shopping_cart,
-                          text: '爱宠用品',
+                          text: '用品',
                           ),
                           GButton(
                           icon: LineIcons.heart_o,
-                          text: '爱宠交友',
+                          text: '交友',
                           ),
                           GButton(
                           icon: LineIcons.video_camera,
-                          text: '爱宠生活',
+                          text: '生活',
                           ),
                           GButton(
                           icon: LineIcons.user,

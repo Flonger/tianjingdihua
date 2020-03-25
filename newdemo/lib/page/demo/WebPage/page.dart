@@ -5,17 +5,18 @@ import 'reducer.dart';
 import 'state.dart';
 import 'view.dart';
 
-class VideoDetailPage extends Page<VideoDetailState, Map<String, dynamic>> {
-  VideoDetailPage()
+class WebPagePage extends Page<WebPageState, Map<String, dynamic>> {
+  WebPagePage()
       : super(
             initState: initState,
             effect: buildEffect(),
             reducer: buildReducer(),
             view: buildView,
-            dependencies: Dependencies<VideoDetailState>(
+            dependencies: Dependencies<WebPageState>(
                 adapter: null,
-                slots: <String, Dependent<VideoDetailState>>{
+                slots: <String, Dependent<WebPageState>>{
                 }),
-            middleware: <Middleware<VideoDetailState>>[
+            middleware: <Middleware<WebPageState>>[
             ],);
+
 }

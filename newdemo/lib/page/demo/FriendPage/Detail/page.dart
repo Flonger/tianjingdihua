@@ -5,17 +5,18 @@ import 'reducer.dart';
 import 'state.dart';
 import 'view.dart';
 
-class VideoDetailPage extends Page<VideoDetailState, Map<String, dynamic>> {
-  VideoDetailPage()
+class FriendDetailPage extends Page<FriendDetailState, Map<String, dynamic>> {
+  FriendDetailPage()
       : super(
             initState: initState,
             effect: buildEffect(),
             reducer: buildReducer(),
             view: buildView,
-            dependencies: Dependencies<VideoDetailState>(
+            dependencies: Dependencies<FriendDetailState>(
                 adapter: null,
-                slots: <String, Dependent<VideoDetailState>>{
+                slots: <String, Dependent<FriendDetailState>>{
                 }),
-            middleware: <Middleware<VideoDetailState>>[
+            middleware: <Middleware<FriendDetailState>>[
             ],);
+
 }

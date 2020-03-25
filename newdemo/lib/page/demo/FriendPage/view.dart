@@ -10,16 +10,16 @@ Widget buildView(FriendPageState state, Dispatch dispatch, ViewService viewServi
   return ResponsiveGridList(
       desiredItemWidth: 150,
       minSpacing: 10,
-      children: _getSubWidget(state),
+      children: _getSubWidget(state,dispatch),
   );
 }
 
-List<Widget> _getSubWidget(FriendPageState state){
+List<Widget> _getSubWidget(FriendPageState state, Dispatch dispatch){
   List<Widget> subW = [];//先建一个数组用于存放循环生成的widget
   for (Pet pet in state.petList){
     subW.add(
       new GestureDetector(
-        onTap: (){},
+        onTap: (){dispatch(FriendPageActionCreator.toDetail(pet));},
         child: Container(
           height: 200,
           alignment: Alignment(0, 0),

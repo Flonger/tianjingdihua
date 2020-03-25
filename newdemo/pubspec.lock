@@ -202,6 +202,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_banner_swiper:
+    dependency: "direct main"
+    description:
+      name: flutter_banner_swiper
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.4"
   flutter_custom_dialog:
     dependency: "direct main"
     description:
@@ -209,6 +216,25 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.16"
+  flutter_i18n:
+    dependency: "direct main"
+    description:
+      name: flutter_i18n
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.12.0"
+  flutter_ijkplayer:
+    dependency: "direct main"
+    description:
+      name: flutter_ijkplayer
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.5+1"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -226,6 +252,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_webview_plugin:
+    dependency: "direct main"
+    description:
+      name: flutter_webview_plugin
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.10+1"
   glob:
     dependency: transitive
     description:
@@ -282,6 +315,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.4"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.16.0"
   io:
     dependency: transitive
     description:

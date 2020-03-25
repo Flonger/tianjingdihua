@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:newdemo/apiModel/banner.dart';
 
 import 'action.dart';
 import 'state.dart';
@@ -25,5 +26,8 @@ homepageState _getInfo(homepageState state, Action action) {
   newState.desc = action.payload['desc'];
   newState.numofpeople = action.payload['numofpeople'];
   newState.address = action.payload['location']['address'];
+  List<Banner> banners = (action.payload['banners'] as List).map((i)=>Banner.fromJson(i)).toList();
+  newState.banners = banners;
+
   return newState;
 }

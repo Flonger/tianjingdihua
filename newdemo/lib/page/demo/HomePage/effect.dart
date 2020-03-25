@@ -7,6 +7,7 @@ import 'dart:io';
 Effect<homepageState> buildEffect() {
   return combineEffects(<Object, Effect<homepageState>>{
     Lifecycle.initState: _init,
+//    Lifecycle.appear: _appear,
     homepageAction.action: _onAction,
     homepageAction.call: _onCall,
     homepageAction.route: _onRoute,
@@ -18,6 +19,11 @@ void _init(Action action, Context<homepageState> ctx) {
       ctx.dispatch(homepageActionCreator.getInfo(value));
   });
 }
+//void _appear(Action action, Context<homepageState> ctx) {
+//  HomePageApi.getInfo().then((value){
+//    ctx.dispatch(homepageActionCreator.getInfo(value));
+//  });
+//}
 void _onAction(Action action, Context<homepageState> ctx) {
 }
 void _onCall(Action action, Context<homepageState> ctx) {

@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:newdemo/page/demo/HomePage/banner/component.dart';
 
 import 'effect.dart';
 import 'reducer.dart';
@@ -15,6 +16,7 @@ class homepagePage extends Page<homepageState, Map<String, dynamic>> {
             dependencies: Dependencies<homepageState>(
                 adapter: null,
                 slots: <String, Dependent<homepageState>>{
+                  'banner':HomeBannerConnector()+BannerComponent(),
                 }),
             middleware: <Middleware<homepageState>>[
             ],);

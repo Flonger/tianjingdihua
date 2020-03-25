@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart' hide Action;
 import 'package:flutter/material.dart' hide Action;
 import 'package:newdemo/global/state.dart';
 import 'package:newdemo/global/store.dart';
+import 'package:newdemo/page/demo/FriendPage/Detail/page.dart';
 import 'package:newdemo/page/demo/FriendPage/page.dart';
+import 'package:newdemo/page/demo/WebPage/page.dart';
 
 
 import 'HomePage/page.dart';
@@ -29,7 +31,9 @@ var routes = new PageRoutes(
     'store': StorePagePage(),
     'video': VideoPagePage(),
     'videoDetail': VideoDetailPage(),
-    'friend':FriendPagePage(),
+    'friend': FriendPagePage(),
+    'friendDetail': FriendDetailPage(),
+    'webPage': WebPagePage(),
   },
   visitor: (String path, Page<Object, dynamic> page) {
     /// XXX
