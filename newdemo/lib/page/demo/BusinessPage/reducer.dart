@@ -9,7 +9,7 @@ Reducer<BusinessState> buildReducer() {
   return asReducer(
     <Object, Reducer<BusinessState>>{
       BusinessAction.query: _onQuery,
-      BusinessAction.loadSettings: _onLoadSettings,
+      BusinessAction.loadCItems: _onLoadCItems,
     },
   );
 }
@@ -20,7 +20,7 @@ BusinessState _onQuery(BusinessState state, Action action) {
   return newState;
 }
 
-BusinessState _onLoadSettings(BusinessState state, Action action) {
+BusinessState _onLoadCItems(BusinessState state, Action action) {
   final BusinessState newState = state.clone();
   newState.cItems = action.payload;
   println('state更新了');

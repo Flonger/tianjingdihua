@@ -33,7 +33,7 @@ void _loadCItems(Action action, Context<BusinessState> ctx, List arr) {
     Commodity commodity = arr[index];
     return _generateItemState(ctx, commodity);
   });
-  ctx.dispatch(BusinessActionCreator.onLoadSettings(cItems));
+  ctx.dispatch(BusinessActionCreator.onLoadCItems(cItems));
 }
 
 

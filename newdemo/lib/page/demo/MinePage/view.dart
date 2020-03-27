@@ -143,7 +143,7 @@ _topItems(BuildContext context) {
               Padding(
                 padding: EdgeInsets.only(top: 5),
                 child: Text(
-                  '我的账单',
+                  '爱宠管理',
                   style: TextStyle(
                       fontSize: 13, color: Color(int.parse('0xff333333'))),
                 ),

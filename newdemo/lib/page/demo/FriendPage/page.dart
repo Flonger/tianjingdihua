@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:newdemo/page/demo/FriendPage/adapter.dart';
 
 import 'effect.dart';
 import 'reducer.dart';
@@ -13,7 +14,7 @@ class FriendPagePage extends Page<FriendPageState, Map<String, dynamic>> {
             reducer: buildReducer(),
             view: buildView,
             dependencies: Dependencies<FriendPageState>(
-                adapter: null,
+                adapter: NoneConn<FriendPageState>() + FriendAdapter(),
                 slots: <String, Dependent<FriendPageState>>{
                 }),
             middleware: <Middleware<FriendPageState>>[

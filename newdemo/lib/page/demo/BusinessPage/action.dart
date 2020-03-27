@@ -6,7 +6,7 @@ import 'package:newdemo/page/demo/BusinessPage/Commodity_Item/state.dart';
 enum BusinessAction {
   query,
   itemClick,
-  loadSettings,
+  loadCItems,
 }
 
 class BusinessActionCreator {
@@ -19,7 +19,7 @@ class BusinessActionCreator {
     return Action(BusinessAction.itemClick, payload: commodity);
   }
 
-  static Action onLoadSettings(List<CommodityItemState> settings) {
-    return Action(BusinessAction.loadSettings, payload: settings);
+  static Action onLoadCItems(List<CommodityItemState> settings) {
+    return Action(BusinessAction.loadCItems, payload: settings);
   }
 }

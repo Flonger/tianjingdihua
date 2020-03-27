@@ -1,51 +1,38 @@
+import 'dart:async';
+
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyrefresh/bezier_bounce_footer.dart';
+import 'package:flutter_easyrefresh/bezier_hour_glass_header.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 import 'action.dart';
 import 'state.dart';
 
 Widget buildView(BusinessState state, Dispatch dispatch, ViewService viewService) {
-  println(state.cItems!=null?state.cItems.length:0);
-    return ListView.builder(
-      itemBuilder: viewService.buildAdapter().itemBuilder,
-      itemCount: viewService.buildAdapter().itemCount,
+  // 总数
+  int _count = 20;
+    return EasyRefresh(
+        header: BezierHourGlassHeader(
+          color: Colors.black87,
+          backgroundColor: Colors.grey
+        ),
+        footer: BezierBounceFooter(
+          color: Theme.of(viewService.context).scaffoldBackgroundColor,
+        ),
+        onRefresh: () async {
+          await Future.delayed(Duration(seconds: 2), () {
+            _count = 20;
+          });
+        },
+        onLoad: () async {
+          await Future.delayed(Duration(seconds: 2), () {
+            _count += 20;
+          });
+        },
+        child: ListView.builder(
+            itemBuilder: viewService.buildAdapter().itemBuilder,
+            itemCount: viewService.buildAdapter().itemCount,
+          ),
     );
-//  var buildListView = ListView.builder(
-//    itemCount: state.storeList.length,
-//    itemBuilder: (BuildContext context, int index) {
-//      return GestureDetector(
-//        onTap: (){dispatch(BusinessActionCreator.itemOnClick(state.storeList[index]));},
-//        child: Card(
-//            child: Row(
-//              children: <Widget>[
-//                Padding(
-//                  padding: EdgeInsets.only(left: 0),
-//                  child: Image.network(
-//                    state.storeList[index].image,
-//                    width: 200,
-//                    height: 120,
-//                  ),
-//                ),
-//                Expanded(
-//                  child: Column(
-//                    children: <Widget>[
-//                      Text('名称:' +
-//                          state.storeList[index].title.toString()),
-//                      Text('描述:' +
-//                          state.storeList[index].desc.toString()),
-//                      Text('价格:' +
-//                          state.storeList[index].price.toString() +
-//                          '/' +
-//                          state.storeList[index].unit.toString()),
-//                    ],
-//                  )
-//                ),
-//              ],
-//            ),
-//        ),
-//      );
-//    },
-//  );
-//
-//  return Scaffold(appBar: null, body: Center(child: buildListView));
 }
